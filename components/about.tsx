@@ -6,7 +6,6 @@ import { SectionHeading } from "@/components/section-heading";
 import {
   GraduationCap,
   Calendar,
-  Award,
   BookOpen,
   MapPin,
   CheckCircle2,
@@ -142,14 +141,9 @@ export function About() {
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
                 className="card-dark rounded-3xl p-6 sm:p-7 border border-white/[0.08] flex flex-col justify-between relative group"
               >
-                {/* Score Pill at top right */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-white/[0.08] flex items-center justify-center text-zinc-400 group-hover:text-[#ccff00] transition-colors">
                     <BookOpen className="w-5 h-5" />
-                  </div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#ccff00] text-black shadow-md shadow-[#ccff00]/20">
-                    <Award className="w-3.5 h-3.5 stroke-[2.5]" />
-                    <span>{item.score}</span>
                   </div>
                 </div>
 
@@ -160,11 +154,6 @@ export function About() {
                   <p className="text-xs font-medium text-zinc-300 mb-3">
                     {item.degree}
                   </p>
-                  {item.details && (
-                    <p className="text-xs text-zinc-400 leading-relaxed mb-4">
-                      {item.details}
-                    </p>
-                  )}
                 </div>
 
                 <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs text-zinc-400 font-mono">
