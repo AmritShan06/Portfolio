@@ -4,7 +4,6 @@ import { Project } from "@/data/portfolio";
 import {
   ExternalLink,
   Layers,
-  MessageSquare,
   Sparkles,
   CheckCircle2,
   ArrowUpRight,
@@ -56,24 +55,14 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
         );
       case "snapchat":
         return (
-          <div className="h-44 sm:h-52 w-full bg-[#070707] p-4 sm:p-5 flex flex-col justify-between border-b border-white/[0.08] relative overflow-hidden group-hover:border-[#ccff00]/40 transition-colors">
-            <div className="flex items-center justify-between border-b border-white/[0.08] pb-2">
-              <span className="flex items-center gap-2 text-white font-semibold font-mono text-[11px]">
-                <MessageSquare className="w-4 h-4 text-[#ccff00]" />
-                SnapChat
-              </span>
-              <span className="px-2 py-0.5 rounded-full text-[9px] bg-white/[0.06] text-zinc-300 border border-white/[0.1]">
-                Socket.IO
-              </span>
-            </div>
-            <div className="space-y-2 text-[10px]">
-              <div className="p-2 rounded-xl bg-black/90 border border-white/[0.08] text-zinc-300 max-w-[85%]">
-                Real-time channel connected
-              </div>
-              <div className="p-2 rounded-xl bg-[#ccff00]/15 border border-[#ccff00]/30 text-[#ccff00] max-w-[85%] ml-auto">
-                MongoDB synced
-              </div>
-            </div>
+          <div className="relative h-44 sm:h-52 w-full overflow-hidden border-b border-white/[0.08] bg-[#f4f5ff] group-hover:border-[#ccff00]/40 transition-colors">
+            <Image
+              src="/images/snapchat-login.png"
+              alt="SnapChat login screen with email and password fields"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover object-center"
+            />
           </div>
         );
       default:
