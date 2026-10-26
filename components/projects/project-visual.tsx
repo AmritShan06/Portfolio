@@ -48,20 +48,16 @@ export function ProjectCardVisual({ slug, large = false }: ProjectCardVisualProp
     case "snapchat":
       return (
         <div
-          className={`${height} w-full bg-[#070707] p-6 sm:p-8 flex flex-col justify-center gap-4 relative overflow-hidden`}
+          className={`${large ? "relative h-[240px] sm:h-[360px] lg:h-[440px]" : "relative h-44 sm:h-52"} w-full overflow-hidden bg-[#f4f5ff]`}
         >
-          <div className="flex items-center gap-2 text-white font-mono text-sm">
-            <MessageSquare className="w-5 h-5 text-[#ccff00]" />
-            SnapChat real-time channel
-          </div>
-          <div className="space-y-3 max-w-md mx-auto w-full text-xs sm:text-sm">
-            <div className="p-3 rounded-2xl bg-black/90 border border-white/[0.08] text-zinc-300">
-              Socket.IO bidirectional stream
-            </div>
-            <div className="p-3 rounded-2xl bg-[#ccff00]/15 border border-[#ccff00]/30 text-[#ccff00] ml-8">
-              JWT auth + MongoDB persistence
-            </div>
-          </div>
+          <Image
+            src="/images/snapchat-login.png"
+            alt="SnapChat login screen with email and password fields"
+            fill
+            priority={large}
+            sizes={large ? "(max-width: 640px) 100vw, 896px" : "(max-width: 768px) 100vw, 33vw"}
+            className={large ? "object-contain" : "object-cover object-center"}
+          />
         </div>
       );
     default:
