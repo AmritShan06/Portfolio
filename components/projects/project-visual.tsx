@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Layers, MessageSquare, Sparkles } from "lucide-react";
+import { Layers, Sparkles } from "lucide-react";
 
 interface ProjectCardVisualProps {
   slug: string;
