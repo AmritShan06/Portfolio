@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Layers, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 interface ProjectCardVisualProps {
   slug: string;
@@ -28,21 +28,16 @@ export function ProjectCardVisual({ slug, large = false }: ProjectCardVisualProp
     case "flowai":
       return (
         <div
-          className={`${height} w-full bg-[#070707] p-6 sm:p-8 flex flex-col justify-center gap-6 relative overflow-hidden`}
+          className={`${large ? "relative h-[240px] sm:h-[360px] lg:h-[440px]" : "relative h-44 sm:h-52"} w-full overflow-hidden bg-[#0b1220]`}
         >
-          <div className="flex items-center gap-2 text-white font-mono text-sm">
-            <Layers className="w-5 h-5 text-[#ccff00]" />
-            FlowAI architecture canvas
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3 font-mono text-xs">
-            <div className="px-4 py-3 rounded-xl bg-black border border-white/10">React UI</div>
-            <div className="h-px w-8 bg-[#ccff00]/50" />
-            <div className="px-4 py-3 rounded-xl bg-[#ccff00]/10 border border-[#ccff00]/40 text-[#ccff00]">
-              AI Suggest
-            </div>
-            <div className="h-px w-8 bg-[#ccff00]/50" />
-            <div className="px-4 py-3 rounded-xl bg-black border border-white/10">MySQL + JWT</div>
-          </div>
+          <Image
+            src="/images/flowai-preview.png"
+            alt="FlowAI flowchart builder with diagram tools and AI suggestions"
+            fill
+            priority={large}
+            sizes={large ? "(max-width: 640px) 100vw, 896px" : "(max-width: 768px) 100vw, 33vw"}
+            className={large ? "object-contain" : "object-cover object-center"}
+          />
         </div>
       );
     case "snapchat":

@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Project } from "@/data/portfolio";
 import {
   ExternalLink,
-  Layers,
   Sparkles,
   CheckCircle2,
   ArrowUpRight,
@@ -32,25 +31,14 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
         );
       case "flowai":
         return (
-          <div className="h-44 sm:h-52 w-full bg-[#070707] p-4 sm:p-5 flex flex-col justify-between border-b border-white/[0.08] relative overflow-hidden group-hover:border-[#ccff00]/40 transition-colors">
-            <div className="flex items-center justify-between border-b border-white/[0.08] pb-2">
-              <span className="flex items-center gap-2 text-white font-semibold font-mono text-[11px]">
-                <Layers className="w-4 h-4 text-[#ccff00]" />
-                FlowAI
-              </span>
-              <span className="px-2 py-0.5 rounded-full text-[9px] bg-white/[0.06] text-zinc-300 border border-white/[0.1]">
-                React Flow
-              </span>
-            </div>
-            <div className="flex items-center justify-center gap-2 py-2">
-              <div className="p-2 rounded-lg bg-black border border-white/[0.1] text-[9px]">Client</div>
-              <div className="h-px w-6 bg-[#ccff00]/60" />
-              <div className="p-2 rounded-lg bg-[#ccff00]/10 border border-[#ccff00]/40 text-[9px] text-[#ccff00]">
-                AI
-              </div>
-              <div className="h-px w-6 bg-[#ccff00]/60" />
-              <div className="p-2 rounded-lg bg-black border border-white/[0.1] text-[9px]">MySQL</div>
-            </div>
+          <div className="relative h-44 sm:h-52 w-full overflow-hidden border-b border-white/[0.08] bg-[#0b1220] group-hover:border-[#ccff00]/40 transition-colors">
+            <Image
+              src="/images/flowai-preview.png"
+              alt="FlowAI flowchart builder with diagram tools and AI suggestions"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover object-center"
+            />
           </div>
         );
       case "snapchat":
